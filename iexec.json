@@ -1,0 +1,37 @@
+{
+  "description": "My iExec ressource description, must be at least 150 chars long in order to pass the validation checks. Describe your application, dataset or workerpool to your users",
+  "license": "MIT",
+  "author": "?",
+  "social": {
+    "website": "?",
+    "github": "?"
+  },
+  "logo": "logo.png",
+  "buyConf": {
+    "params": {
+      "iexec_args": ""
+    },
+    "tag": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "trust": "0",
+    "callback": "0x0000000000000000000000000000000000000000"
+  },
+  "app": {
+    "owner": "0x7800885445a481315Fac90A8e8BDb62a0e538b71",
+    "name": "Faceswap1.3",
+    "type": "DOCKER",
+    "multiaddr": "registry.hub.docker.com/ericro/faceswap:1.3",
+    "checksum": "0xfb132b1b87de1932fd6f18b1b6530552476424e09728c730ff0028f0193373aa",
+    "mrenclave": ""
+  },
+  "order": {
+    "apporder": {
+      "app": "0xB0D39466fa25877475fCaBeF0Db46c12Be350687",
+      "appprice": "0",
+      "volume": "1000000",
+      "tag": [],
+      "datasetrestrict": "0x0000000000000000000000000000000000000000",
+      "workerpoolrestrict": "0x0000000000000000000000000000000000000000",
+      "requesterrestrict": "0x0000000000000000000000000000000000000000"
+    }
+  }
+}
