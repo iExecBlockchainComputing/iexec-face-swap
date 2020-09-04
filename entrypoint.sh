@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "APP RUNNING";
+ls
 
 echo "INPUT DIRECTORY CONTENT";
 ls -a /iexec_in;
@@ -33,14 +34,14 @@ echo ' - IEXEC_BOT_TASK_INDEX='$IEXEC_BOT_TASK_INDEX;
 
 FILE1=/iexec_in/$IEXEC_INPUT_FILE_NAME_1
 FILE2=/iexec_in/$IEXEC_INPUT_FILE_NAME_2
-echo "app input files:" 
+echo "app input files:"
 echo $FILE1
 echo $FILE2
 
 echo "start program"
-cd FaceSwap-master/
+
 python main.py --src $FILE1 --dst $FILE2 --out /iexec_out/output.jpg --correct_color --no_debug_window
-echo "end program" 
+echo "end program"
 echo "CREATING determinism.txt IN /iexec_out/";
 echo "ok" > /iexec_out/determinism.txt && echo "done";
 echo "{ \"deterministic-output-path\" : \"/iexec_out/determinism.txt\" }" > /iexec_out/computed.json
