@@ -1,0 +1,19 @@
+#!/bin/sh
+cd $(dirname $0)
+
+IEXEC_OUT=$(pwd)/iexec_out
+
+rm -rf $IEXEC_OUT
+mkdir -p $IEXEC_OUT
+
+docker run --rm -e IEXEC_OUT=/iexec_out \
+                -e IEXEC_IN=/iexec_in \
+                -v $IEXEC_OUT:/iexec_out \
+                -v $(pwd)/images:/iexec_in \
+                -e IEXEC_NB_INPUT_FILES=2 \
+                -e IEXEC_INPUT_FILE_NAME_1=test4.jpg \
+                -e IEXEC_INPUT_FILE_NAME_2=test6.jpg \
+                iexec-face-swap $@
+
+echo
+find $IEXEC_OUT

@@ -2,15 +2,11 @@ FROM jjanzic/docker-python3-opencv
 
 MAINTAINER eric <er@iex.ec>
 
-RUN apt-get update && \
-	apt-get install -y curl wget nano unzip python-pip && \
-	apt-get -y autoremove && \
-	rm -rf /var/lib/apt/lists/*
+ADD requirements.txt /app/
+WORKDIR /app
+RUN pip install -r requirements.txt
 
-COPY FaceSwap-master.zip /FaceSwap-master.zip
-
-RUN unzip FaceSwap-master.zip
-RUN pip3 install -r /FaceSwap-master/requirements.txt
+ADD ./src /app
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
